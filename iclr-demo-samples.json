@@ -1,0 +1,444 @@
+{
+  "schema_version": "dish-iclr-demo-samples-v2",
+  "status": "curated_2k_plus_2k_samples_only",
+  "formal_test_set_generated": false,
+  "description": "Selected English dev samples and corresponding Spatial-Omni SO-7B zero-shot outputs from the frozen edge 2k and cloud 2k datasets. This is not the formal benchmark split.",
+  "dataset_backing": {
+    "edge": {
+      "name": "english_2k_v1",
+      "frozen_audio_count": 2000,
+      "formal_request_count": 33668,
+      "tasks": [
+        "DOA",
+        "RANGE",
+        "DOA_ASR",
+        "TEXT_DOA",
+        "KWS"
+      ],
+      "demo_tasks": [
+        "DOA",
+        "RANGE",
+        "DOA_ASR",
+        "TEXT_DOA"
+      ]
+    },
+    "cloud": {
+      "name": "english_cloud_2k_v1",
+      "frozen_scene_count": 2000,
+      "formal_request_count_total": 79696,
+      "tasks": [
+        "C1_SETLOC",
+        "C2_REGION_ASR",
+        "C3_TEXTLOC",
+        "C4_REGION_KS12"
+      ],
+      "demo_tasks": [
+        "C1_SETLOC",
+        "C2_REGION_ASR",
+        "C3_TEXTLOC"
+      ]
+    }
+  },
+  "pages": 15,
+  "groups": {
+    "Foundation": [
+      "DOA",
+      "RANGE",
+      "TEXT_DOA",
+      "DOA_ASR",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "Temporal": [
+      "TRACK",
+      "GROUND",
+      "TASR"
+    ],
+    "Active": [
+      "ACHOICE",
+      "ALOOP"
+    ],
+    "Cooperative": [
+      "ANCHOR",
+      "COMM",
+      "HANDOFF"
+    ]
+  },
+  "curated_examples": [
+    {
+      "task_id": "DOA",
+      "dataset": "english_2k_v1",
+      "split": "dev",
+      "sample_id": "51a422f21913bd4091cd9275",
+      "query_id": "21408b9d8ccc2071f77f299a",
+      "episode_id": "1769fc003b9d15f242b30b50",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-edge-dev-1769fc003b9d15f242b30b50.wav",
+      "audio_source": "soundspaces_demo/multi_robot_static/english_2k_v1/audio/dev/1769fc003b9d15f242b30b50.wav",
+      "audio_sha256": "83f9b31e32bc7d09013f01cb0fe642c025eb317094d8914499fbfda69de3605d",
+      "query": {
+        "source_count": 2
+      },
+      "ground_truth": {
+        "sample_id": "51a422f21913bd4091cd9275",
+        "source_id": "H01",
+        "output": {
+          "directions": [
+            [
+              -0.7932375626968527,
+              -0.0015273261817139799,
+              0.6089103681179122
+            ],
+            [
+              -0.9928285274107085,
+              -0.10251192331528428,
+              0.06150463996874923
+            ]
+          ]
+        }
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "[[12.0,1.0], [1.0,1.0]]",
+        "prediction": {
+          "directions": [
+            [
+              -0.2078800248602049,
+              0.01745240643728351,
+              -0.9779986241164497
+            ],
+            [
+              -0.017449748351250485,
+              0.01745240643728351,
+              -0.9996954135095479
+            ]
+          ]
+        },
+        "inference_seconds": 0.4854365009814501,
+        "generated_tokens": 20
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "RANGE",
+      "dataset": "english_2k_v1",
+      "split": "dev",
+      "sample_id": "01b28c881575f4a9a3f93008",
+      "query_id": "83bea4f92ebba3695aa83e66",
+      "episode_id": "1769fc003b9d15f242b30b50",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-edge-dev-1769fc003b9d15f242b30b50.wav",
+      "audio_source": "soundspaces_demo/multi_robot_static/english_2k_v1/audio/dev/1769fc003b9d15f242b30b50.wav",
+      "audio_sha256": "83f9b31e32bc7d09013f01cb0fe642c025eb317094d8914499fbfda69de3605d",
+      "query": {
+        "azimuth_sector_right_deg": [
+          -150,
+          -120
+        ]
+      },
+      "ground_truth": {
+        "sample_id": "01b28c881575f4a9a3f93008",
+        "source_id": "H01",
+        "output": {
+          "distance_m": 3.167149164056068
+        }
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "1.8 meters",
+        "prediction": {
+          "distance_m": 1.8
+        },
+        "inference_seconds": 0.16543066874146461,
+        "generated_tokens": 5
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "DOA_ASR",
+      "dataset": "english_2k_v1",
+      "split": "dev",
+      "sample_id": "d22adc1378268b777b622014",
+      "query_id": "99ff25c2847bf1dcdd6e99d0",
+      "episode_id": "1769fc003b9d15f242b30b50",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-edge-dev-1769fc003b9d15f242b30b50.wav",
+      "audio_source": "soundspaces_demo/multi_robot_static/english_2k_v1/audio/dev/1769fc003b9d15f242b30b50.wav",
+      "audio_sha256": "83f9b31e32bc7d09013f01cb0fe642c025eb317094d8914499fbfda69de3605d",
+      "query": {
+        "azimuth_right_deg": -127.51080841878456,
+        "elevation_deg": -0.08750937817462082
+      },
+      "ground_truth": {
+        "sample_id": "d22adc1378268b777b622014",
+        "source_id": "H01",
+        "output": {
+          "transcript": "you were wrong in all that i said"
+        }
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "The speaker says, \"You were wrong in all that.\"",
+        "prediction": {
+          "transcript": "The speaker says, \"You were wrong in all that.\""
+        },
+        "inference_seconds": 0.32408482395112514,
+        "generated_tokens": 13
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "TEXT_DOA",
+      "dataset": "english_2k_v1",
+      "split": "dev",
+      "sample_id": "4e3d3095ca547f7a89a2f965",
+      "query_id": "09373c7e6597b54056946ff6",
+      "episode_id": "1769fc003b9d15f242b30b50",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-edge-dev-1769fc003b9d15f242b30b50.wav",
+      "audio_source": "soundspaces_demo/multi_robot_static/english_2k_v1/audio/dev/1769fc003b9d15f242b30b50.wav",
+      "audio_sha256": "83f9b31e32bc7d09013f01cb0fe642c025eb317094d8914499fbfda69de3605d",
+      "query": {
+        "transcript": "you were wrong in all that i said"
+      },
+      "ground_truth": {
+        "sample_id": "4e3d3095ca547f7a89a2f965",
+        "source_id": "H01",
+        "output": {
+          "direction": [
+            -0.7932375626968527,
+            -0.0015273261817139799,
+            0.6089103681179122
+          ]
+        }
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "(100.0, 10.0)",
+        "prediction": {
+          "direction": [
+            -0.9698463103929541,
+            0.17364817766693033,
+            0.17101007166283433
+          ]
+        },
+        "inference_seconds": 0.822923518717289,
+        "generated_tokens": 14
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "C1_SETLOC",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev",
+      "sample_id": "761312d01c7232c8cf43b43c",
+      "query_id": "7c3ea858cea8a55b0573ead3",
+      "episode_id": "1cddbd81251f7af05277a7e7",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-cloud-c1-dev.wav",
+      "audio_source": "audio/dev/10ce2ed19f0936cc4e89f0a6.wav",
+      "audio_sha256": "17a5402e50e87ac89a3da38b44d60440c58b8a8d1aef48ea21ce1b53933a1571",
+      "query": {
+        "human_source_count": 2
+      },
+      "ground_truth": {
+        "region_type": null,
+        "is_empty": null,
+        "targets": [
+          {
+            "source_id": "H01",
+            "xyz_world_m": [
+              2.7550960298910057,
+              1.567948902091672,
+              4.322583208280246
+            ],
+            "transcript": "up"
+          },
+          {
+            "source_id": "H02",
+            "xyz_world_m": [
+              1.4771226610088015,
+              1.9236694282438493,
+              0.9852210729995006
+            ],
+            "transcript": "bed"
+          }
+        ],
+        "label": null
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_cloud_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "[[2.43793979,1.34464263,-0.262795276],[-3.58758667,1.347115,2.1663935]]",
+        "prediction": [
+          [
+            2.43793979,
+            1.34464263,
+            -0.262795276
+          ],
+          [
+            -3.58758667,
+            1.347115,
+            2.1663935
+          ]
+        ],
+        "inference_seconds": 1.6237204000353813,
+        "generated_tokens": 66
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "C2_REGION_ASR",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev",
+      "sample_id": "6e09e0220ad6dd55e331b65d",
+      "query_id": "92452749b71967afaf9a8013",
+      "episode_id": "a1845169143b91df139eb29c",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-cloud-c2-dev.wav",
+      "audio_source": "audio/dev/1afac8bbb769ce8b845e777a.wav",
+      "audio_sha256": "9da55ac8ae51b23a739973fd623e8f296799912ad85bf42bc34cff317f1a1c03",
+      "query": {
+        "region": {
+          "type": "aabb",
+          "min_xyz_m": [
+            -6.039104999905552,
+            0.6887579606240273,
+            -2.7473858306210923
+          ],
+          "max_xyz_m": [
+            -2.785516252120048,
+            1.8200137558129974,
+            -0.7561755130333703
+          ]
+        }
+      },
+      "ground_truth": {
+        "region_type": "positive",
+        "is_empty": false,
+        "targets": [
+          {
+            "source_id": "H01",
+            "xyz_world_m": [
+              -5.501075686408503,
+              1.3841753115440092,
+              -2.3978654692567867
+            ],
+            "transcript": "i found that as a woman of business"
+          }
+        ],
+        "label": null
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_cloud_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "I found that as a woman of business",
+        "prediction": "I found that as a woman of business",
+        "inference_seconds": 0.4250647481530905,
+        "generated_tokens": 9
+      },
+      "status": "curated_input_and_gt_only"
+    },
+    {
+      "task_id": "C3_TEXTLOC",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev",
+      "sample_id": "114ed1352e946fe14b8c8dd9",
+      "query_id": "9a6c271f1e102d3b018ef2e6",
+      "episode_id": "8f55ece06f83f39e345f08b6",
+      "audio_asset": "/dish-bench-demo/iclr-2k2k-cloud-c3-dev.wav",
+      "audio_source": "audio/dev/b35a549f4d567c0f36d0feda.wav",
+      "audio_sha256": "6d4d780e470137beb9a67f632b3b41e17a0b1ec1d777c937bf5956e4ddfd1dad",
+      "query": {
+        "text": "i think i have felt that you were coming"
+      },
+      "ground_truth": {
+        "region_type": null,
+        "is_empty": null,
+        "targets": [
+          {
+            "source_id": "H01",
+            "xyz_world_m": [
+              -4.312024789443584,
+              1.9183542536451421,
+              4.452355151387362
+            ],
+            "transcript": "i think i have felt that you were coming"
+          }
+        ],
+        "label": null
+      },
+      "formal_model_output": {
+        "model": "Spatial-Omni SO-7B",
+        "run": "english_cloud_2k_so7b_v1/dev",
+        "zero_shot": true,
+        "status": "valid",
+        "raw_text": "[0.0,1.2,0.0]",
+        "prediction": [
+          0.0,
+          1.2,
+          0.0
+        ],
+        "inference_seconds": 0.8748912643641233,
+        "generated_tokens": 14
+      },
+      "status": "curated_input_and_gt_only"
+    }
+  ],
+  "protocol_only_pages": [
+    "TRACK",
+    "GROUND",
+    "TASR",
+    "ACHOICE",
+    "ALOOP",
+    "ANCHOR",
+    "COMM",
+    "HANDOFF"
+  ],
+  "audio_samples": [
+    {
+      "id": "edge-foundation-foa",
+      "path": "/dish-bench-demo/iclr-2k2k-edge-dev-1769fc003b9d15f242b30b50.wav",
+      "dataset": "english_2k_v1",
+      "split": "dev"
+    },
+    {
+      "id": "cloud-c1-foa",
+      "path": "/dish-bench-demo/iclr-2k2k-cloud-c1-dev.wav",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev"
+    },
+    {
+      "id": "cloud-c2-foa",
+      "path": "/dish-bench-demo/iclr-2k2k-cloud-c2-dev.wav",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev"
+    },
+    {
+      "id": "cloud-c3-foa",
+      "path": "/dish-bench-demo/iclr-2k2k-cloud-c3-dev.wav",
+      "dataset": "english_cloud_2k_v1",
+      "split": "dev"
+    }
+  ],
+  "ground_truth": "Selected GT is exposed only for these curated dev samples. No formal model outputs are included.",
+  "provenance": "No Xiaochi/小驰 prompt, transcript, or legacy Cloud/Active preview asset is used by this v2 curated manifest.",
+  "model_baseline": {
+    "name": "Spatial-Omni SO-7B",
+    "type": "zero-shot spatial omni baseline",
+    "formal_model_outputs_published_for": "curated Foundation dev samples only",
+    "full_test_results_available_locally": true,
+    "model_prediction_archive_public": false
+  }
+}
